@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { getEthereumData, getMicrosoftData } from './api';
 import "./App.css";
 
-const ethereumData = getEthereumData();
-const microsoftData = getMicrosoftData();
+import { EthereumRow } from './components/EthereumRow';
+import { MicrosoftRow } from './components/MicrosoftRow';
 
 class App extends Component {
   render() {
@@ -23,15 +22,7 @@ class App extends Component {
               </tr>
             </thead>
             <tbody>
-              {ethereumData.map(dayData => (
-                  <tr>
-                    <td>{dayData.date}</td>
-                    <td>{dayData.open}</td>
-                    <td>{dayData.low}</td>
-                    <td>{dayData.high}</td>
-                    <td><span className={`arrow-${dayData.change}`}></span></td>
-                </tr>
-              ))}
+              <EthereumRow />
             </tbody>
           </table>
         </section>
@@ -48,15 +39,7 @@ class App extends Component {
               </tr>
             </thead>
             <tbody>
-              {microsoftData.map(dayData => (
-                  <tr>
-                    <td>{dayData.date}</td>
-                    <td>{dayData.open}</td>
-                    <td>{dayData.low}</td>
-                    <td>{dayData.high}</td>
-                    <td><span className={`arrow-${dayData.change}`}></span></td>
-                </tr>
-              ))}
+              <MicrosoftRow />
             </tbody>
           </table>
         </section>
