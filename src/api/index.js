@@ -44,13 +44,12 @@ const parseRawData = (rawData, numberOfRecords, dataKey, openKey, highKey, lowKe
 
 const addChangeData = (parsedData) => {
   let previousDayData = null;
-  const orderedChronologically = orderByDate(parsedData, false);
+  let orderedChronologically = orderByDate(parsedData, false);
   const updatedData = orderedChronologically.map(dayData => {
     dayData = addChangeDataToDayData(dayData, previousDayData);
     previousDayData = dayData;
     return dayData;
   });
-  const reverseChrono = orderByDate(updatedData, true);
   return orderByDate(updatedData, true);
 }
 
@@ -61,15 +60,9 @@ const orderByDate = (dayData, reverseChronological = false) => {
 }
 
 const addChangeDataToDayData = (dayData, previousDayData) => {
-  if (previousDayData === null) {
-    dayData.change = '';
-  } else if (previousDayData.open < dayData.open) {
-    dayData.change = 'up';
-  } else if (previousDayData.open === dayData.open) {
-    dayData.change = 'no-change';    
-  } else if (previousDayData.open > dayData.open) {
-    dayData.change = 'down';    
-  }
+  if (!previousDayData) return dayData;
+  const change = previousDayData !== null ? previousDayData.open - dayData.open : null;
+  dayData.change =  Math.round((change / previousDayData.open)* 100);
   return dayData;
 }
 

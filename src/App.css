@@ -22,7 +22,11 @@ td:last-child, th:last-child {
 td .arrow-up, td .arrow-down {
   min-width: 0;
   text-align: center;
-  margin: auto;
+}
+
+td span[class^="arrow-"] {
+  float: left;
+  margin-top: 5px;
 }
 
 .arrow-up {
