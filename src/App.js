@@ -1,15 +1,11 @@
 import React, { Component } from "react";
+import { getEthereumData, getMicrosoftData } from "./api";
 import "./App.css";
 
-import { EthereumRow } from "./components/EthereumRow";
-import { MicrosoftRow } from "./components/MicrosoftRow";
-import { getMicrosoftDataFromApi } from "./api/index";
+const ethereumData = getEthereumData();
+const microsoftData = getMicrosoftData();
 
 class App extends Component {
-  async componentDidMount() {
-    const microsoftData = await getMicrosoftDataFromApi();
-    console.table(microsoftData);
-  }
   render() {
     return (
       <div className="crypto-stock-compare">
@@ -27,7 +23,21 @@ class App extends Component {
               </tr>
             </thead>
             <tbody>
-              <EthereumRow />
+              {ethereumData.map(dayData => {
+                const arrowClass = `arrow-${dayData.change > 0 ? "up" : "down"}`;
+                return (
+                  <tr key={dayData.date}>
+                    <td>{dayData.date}</td>
+                    <td>{dayData.open}</td>
+                    <td>{dayData.low}</td>
+                    <td>{dayData.high}</td>
+                    <td>
+                      <span className={arrowClass} />
+                      {dayData.change}%
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </section>
@@ -44,7 +54,21 @@ class App extends Component {
               </tr>
             </thead>
             <tbody>
-              <MicrosoftRow />
+              {microsoftData.map(dayData => {
+                  const arrowClass = `arrow-${dayData.change > 0 ? "up" : "down"}`;
+                  return (
+                    <tr key={dayData.date}>
+                      <td>{dayData.date}</td>
+                      <td>{dayData.open}</td>
+                      <td>{dayData.low}</td>
+                      <td>{dayData.high}</td>
+                      <td>
+                        <span className={arrowClass} />
+                        {dayData.change}%
+                      </td>
+                    </tr>
+                  );
+                })}
             </tbody>
           </table>
         </section>
