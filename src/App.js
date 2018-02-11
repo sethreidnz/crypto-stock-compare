@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import { getEthereumData } from './api';
 import "./App.css";
-
-const ethereumData = getEthereumData();
 
 class App extends Component {
   render() {
