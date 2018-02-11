@@ -1,5 +1,9 @@
 import React, { Component } from "react";
+import { getEthereumData, getMicrosoftData } from './api';
 import "./App.css";
+
+const ethereumData = getEthereumData();
+const microsoftData = getMicrosoftData();
 
 class App extends Component {
   render() {
@@ -19,13 +23,15 @@ class App extends Component {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>2018-02-09</td>
-                <td>814.392</td>
-                <td>783.753</td>
-                <td>879.420</td>
-                <td><span className="arrow-up"></span></td>
-              </tr>
+              {ethereumData.map(dayData => (
+                  <tr>
+                    <td>{dayData.date}</td>
+                    <td>{dayData.open}</td>
+                    <td>{dayData.low}</td>
+                    <td>{dayData.high}</td>
+                    <td><span className={`arrow-${dayData.change}`}></span></td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </section>
@@ -42,13 +48,15 @@ class App extends Component {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>2018-02-09</td>
-                <td>86.300</td>
-                <td>83.830</td>
-                <td>88.180</td>
-                <td><span className="arrow-down"></span></td>
-              </tr>
+              {microsoftData.map(dayData => (
+                  <tr>
+                    <td>{dayData.date}</td>
+                    <td>{dayData.open}</td>
+                    <td>{dayData.low}</td>
+                    <td>{dayData.high}</td>
+                    <td><span className={`arrow-${dayData.change}`}></span></td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </section>

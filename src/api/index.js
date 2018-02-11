@@ -26,7 +26,7 @@ const parseRawData = (rawData, numberOfRecords, dataKey, openKey, highKey, lowKe
   const parsedData = [];
   let recordCount = 0;
   for (const date in seriesData) {
-    if (recordCount >= numberOfRecords -1) {
+    if (recordCount >= numberOfRecords + 1) {
       break;
     }
     parsedData.push(createParsedDataObject(
@@ -39,7 +39,7 @@ const parseRawData = (rawData, numberOfRecords, dataKey, openKey, highKey, lowKe
     recordCount++;
   }
 
-  return addChangeData(parsedData);
+  return addChangeData(parsedData).slice(0, numberOfRecords);
 }
 
 const addChangeData = (parsedData) => {
@@ -96,9 +96,9 @@ const parseTimeSeriesData = (rawData, numberOfRecords) => {
 }
 
 export const getEthereumData = () => {
-  return parseDigitalCurrencyData(ethereumData, 100);
+  return parseDigitalCurrencyData(ethereumData, 5);
 };
 
 export const getMicrosoftData = () => {
-  return parseTimeSeriesData(microsoftData, 100);
+  return parseTimeSeriesData(microsoftData, 5);
 };
