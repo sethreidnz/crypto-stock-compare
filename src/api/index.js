@@ -9,6 +9,7 @@ import {
   TIME_SERIES_DAILY_LOW_KEY
 } from '../data/constants';
 
+const alphaVantageKey = process.env.REACT_APP_ALPHA_VANTAGE_KEY;
 const ethereumData = require('../data/eth-data.json');
 const microsoftData = require('../data/msft-data.json');
 
@@ -93,5 +94,15 @@ export const getEthereumData = () => {
 };
 
 export const getMicrosoftData = () => {
+  return parseTimeSeriesData(microsoftData, 5);
+};
+
+export const getEthereumDataFromApi = async () => {
+  const ethereumData = await fetch(`https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=ETH&market=USD&apikey=${alphaVantageKey}`);
+  return parseDigitalCurrencyData(ethereumData, 5);
+};
+
+export const getMicrosoftDataFromApi = async () => {
+  const microsoftData = await fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&outputsize=compact&apikey=${alphaVantageKey}`);
   return parseTimeSeriesData(microsoftData, 5);
 };
