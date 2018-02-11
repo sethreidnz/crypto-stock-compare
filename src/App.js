@@ -24,7 +24,7 @@ class App extends Component {
                 <td>814.392</td>
                 <td>783.753</td>
                 <td>879.420</td>
-                <td><span class="arrow-up"></span></td>
+                <td><span className="arrow-up"></span></td>
               </tr>
             </tbody>
           </table>
@@ -47,7 +47,7 @@ class App extends Component {
                 <td>86.300</td>
                 <td>83.830</td>
                 <td>88.180</td>
-                <td><span class="arrow-down"></span></td>
+                <td><span className="arrow-down"></span></td>
               </tr>
             </tbody>
           </table>
