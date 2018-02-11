@@ -34,11 +34,43 @@ const parseRawData = (rawData, numberOfRecords, dataKey, openKey, highKey, lowKe
       date,
       openKey,
       highKey,
-      lowKey
+      lowKey     
     ));
     recordCount++;
   }
-  return parsedData;
+
+  return addChangeData(parsedData);
+}
+
+const addChangeData = (parsedData) => {
+  let previousDayData = null;
+  const orderedChronologically = orderByDate(parsedData, false);
+  const updatedData = orderedChronologically.map(dayData => {
+    dayData = addChangeDataToDayData(dayData, previousDayData);
+    previousDayData = dayData;
+    return dayData;
+  });
+  const reverseChrono = orderByDate(updatedData, true);
+  return orderByDate(updatedData, true);
+}
+
+const orderByDate = (dayData, reverseChronological = false) => {
+    return dayData.sort((a, b) => {
+      return reverseChronological ? new Date(b.date) - new Date(a.date) : new Date(a.date) - new Date(b.date);
+    });
+}
+
+const addChangeDataToDayData = (dayData, previousDayData) => {
+  if (previousDayData === null) {
+    dayData.change = '';
+  } else if (previousDayData.open < dayData.open) {
+    dayData.change = 'up';
+  } else if (previousDayData.open === dayData.open) {
+    dayData.change = 'no-change';    
+  } else if (previousDayData.open > dayData.open) {
+    dayData.change = 'down';    
+  }
+  return dayData;
 }
 
 const parseDigitalCurrencyData = (rawData, numberOfRecords) => {
