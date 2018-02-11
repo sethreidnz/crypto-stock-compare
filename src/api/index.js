@@ -1,0 +1,72 @@
+import { 
+  DIGITAL_CURRENCY_DAILY_KEY,
+  DIGITAL_CURRENCY_OPEN_KEY,
+  DIGITAL_CURRENCY_HIGH_KEY,
+  DIGITAL_CURRENCY_LOW_KEY,
+  TIME_SERIES_DAILY_KEY,
+  TIME_SERIES_DAILY_OPEN_KEY,
+  TIME_SERIES_DAILY_HIGH_KEY,
+  TIME_SERIES_DAILY_LOW_KEY
+} from '../data/constants';
+
+const ethereumData = require('../data/eth-data.json');
+const microsoftData = require('../data/msft-data.json');
+
+const createParsedDataObject = (rawRecord, date, openKey, highKey, lowKey) => {
+  return {
+    date,
+    open: rawRecord[openKey],
+    high: rawRecord[highKey],
+    low: rawRecord[lowKey]
+  };
+}
+
+const parseRawData = (rawData, numberOfRecords, dataKey, openKey, highKey, lowKey) => {
+  const seriesData = rawData[dataKey];
+  const parsedData = [];
+  let recordCount = 0;
+  for (const date in seriesData) {
+    if (recordCount >= numberOfRecords -1) {
+      break;
+    }
+    parsedData.push(createParsedDataObject(
+      seriesData[date],
+      date,
+      openKey,
+      highKey,
+      lowKey
+    ));
+    recordCount++;
+  }
+  return parsedData;
+}
+
+const parseDigitalCurrencyData = (rawData, numberOfRecords) => {
+  return parseRawData(
+    rawData,
+    numberOfRecords,
+    DIGITAL_CURRENCY_DAILY_KEY,
+    DIGITAL_CURRENCY_OPEN_KEY,
+    DIGITAL_CURRENCY_HIGH_KEY,
+    DIGITAL_CURRENCY_LOW_KEY
+  );
+}
+
+const parseTimeSeriesData = (rawData, numberOfRecords) => {
+  return parseRawData(
+    rawData,
+    numberOfRecords,
+    TIME_SERIES_DAILY_KEY,
+    TIME_SERIES_DAILY_OPEN_KEY,
+    TIME_SERIES_DAILY_HIGH_KEY,
+    TIME_SERIES_DAILY_LOW_KEY
+  );
+}
+
+export const getEthereumData = () => {
+  return parseDigitalCurrencyData(ethereumData, 100);
+};
+
+export const getMicrosoftData = () => {
+  return parseTimeSeriesData(microsoftData, 100);
+};
