@@ -15,7 +15,7 @@ td, th {
 }
 
 td:last-child, th:last-child {
-  min-width: 0;
+  min-width: 100px;
   text-align: center;
 }
 
