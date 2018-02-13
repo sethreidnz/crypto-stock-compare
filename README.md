@@ -12,6 +12,7 @@ The tutorial is split into multiple parts each covering a simple but important p
 1. Splitting a component into multiple components (splitting-components)
 1. Using props to pass values and functions to sub-components (using-props)
 1. Using state to manage fetching data from an API (using-state-for-api-requests)
+1. Creating a new page with React Router (react-router)
 1. Pulling state up to share data between components (pulling-state-up)
 
 The intention of this repository and tutorial is to act as a guide to help you get your head around the basics of the sorts of things you need to do in a react app
