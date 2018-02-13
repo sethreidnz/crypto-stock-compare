@@ -1,15 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
-
 import { EthereumRow } from "./components/EthereumRow";
 import { MicrosoftRow } from "./components/MicrosoftRow";
-import { getMicrosoftDataFromApi } from "./api/index";
 
 class App extends Component {
-  async componentDidMount() {
-    const microsoftData = await getMicrosoftDataFromApi();
-    console.table(microsoftData);
-  }
   render() {
     return (
       <div className="crypto-stock-compare">
