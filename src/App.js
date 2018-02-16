@@ -1,13 +1,17 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import { PriceTables } from "./price-tables";
+import { ComparisonGraph } from "./comparison-graph";
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <Route exact path="/" component={PriceTables} />
+        <div>
+          <Route exact path="/" component={PriceTables} />
+          <Route exact path="/comparison-graph" component={ComparisonGraph} />
+        </div>
       </Router>
     );
   }
