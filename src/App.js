@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { getEthereumDataFromApi, getMicrosoftDataFromApi } from '../api/index';
 import "./App.css";
 
 import { RouteWithProps } from "./components/RouteWithProps";
