@@ -8,12 +8,14 @@ The app uses real world data from the [Alpha Vantage](https://www.alphavantage.c
 
 The tutorial is split into multiple parts each covering a simple but important part of building a web app with React. You can find the finished code for each step in a branch with the corresponding name in brackets.
 
-1. Creating a basic component (creating-basic-component)
-1. Splitting a component into multiple components (splitting-components)
-1. Using props to pass values and functions to sub-components (using-props)
-1. Using state to manage fetching data from an API (using-state-for-api-requests)
-1. Creating a new page with React Router (react-router)
-1. Pulling state up to share data between components (pulling-state-up)
+- Part 1: Introduction (start)
+- Part 2: Creating a basic component (creating-basic-component)
+- Part 3: Splitting components up (splitting-components)
+- Part 4: Using props to pass values and functions to sub-components (using-props)
+- Part 5: Using state to manage fetching data from an API (using-state-for-api-requests)
+- Part 6: Creating a new pages with React Router (react-router)
+- Part 7: Pulling state up to share data between components and routes (pulling-state-up)
+- Part 8: Passing down functions to affect shared state (passing-functions-to-affect-state)
 
 The intention of this repository and tutorial is to act as a guide to help you get your head around the basics of the sorts of things you need to do in a react app
 
