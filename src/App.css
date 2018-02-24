@@ -55,4 +55,9 @@ header a {
  display: block;
  color: white;
  padding: 4px 0 0;
+ text-decoration: none;
 }
+
+header a.active {
+  text-decoration: underline;
+ }
