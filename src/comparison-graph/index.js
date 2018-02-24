@@ -5,13 +5,10 @@ import { Spinner } from "../components/spinner";
 import { transformIntoSeriesData } from "../utility";
 
 export class ComparisonGraph extends Component {
-  constructor() {
-    super();
-    this.state = {
-      dates: null,
-      openPriceDataSeries: null,
-      hasLoaded: false
-    }
+  state = {
+    ethereumData: null,
+    microsoftData: null,
+    hasLoaded: false
   }
   async componentDidMount() {
     const ethereumData = await getEthereumDataFromApi();
