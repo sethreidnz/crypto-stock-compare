@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { getEthereumDataFromApi, getMicrosoftDataFromApi } from '../api/index';
 import { PriceTable } from "./components/PriceTable";
-import { Spinner } from "../components/spinner";
+import { Loader } from "../components/loader";
 
 export class PriceTables extends Component {
   state = {
@@ -20,10 +20,9 @@ export class PriceTables extends Component {
   }
   render() {
     const { ethereumData, microsoftData, hasLoaded } = this.state;
-    if (!hasLoaded) return <Spinner />;
+    if (!hasLoaded) return <Loader />;
     return (
-      <div className="crypto-stock-compare">
-        <h1>Crypto Stock Compare</h1>
+      <div>
         <section className="value-table">
           <h2>Ethereum</h2>
           <PriceTable priceData={ethereumData} />
