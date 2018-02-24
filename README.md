@@ -14,8 +14,6 @@ The tutorial is split into multiple parts each covering a simple but important p
 - Part 4: Using props to pass values and functions to sub-components (using-props)
 - Part 5: Using state to manage fetching data from an API (using-state-for-api-requests)
 - Part 6: Creating a new pages with React Router (react-router)
-- Part 7: Pulling state up to share data between components and routes (pulling-state-up)
-- Part 8: Passing down functions to affect shared state (passing-functions-to-affect-state)
 
 The intention of this repository and tutorial is to act as a guide to help you get your head around the basics of the sorts of things you need to do in a react app
 
