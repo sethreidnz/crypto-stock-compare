@@ -1,17 +1,14 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs";
 import { getEthereumDataFromApi, getMicrosoftDataFromApi } from '../api/index';
-import { Spinner } from "../components/spinner";
+import { Loader } from "../components/loader";
 import { transformIntoSeriesData } from "../utility";
 
 export class ComparisonGraph extends Component {
-  constructor() {
-    super();
-    this.state = {
-      dates: null,
-      openPriceDataSeries: null,
-      hasLoaded: false
-    }
+  state = {
+    ethereumData: null,
+    microsoftData: null,
+    hasLoaded: false
   }
   async componentDidMount() {
     const ethereumData = await getEthereumDataFromApi();
@@ -24,7 +21,11 @@ export class ComparisonGraph extends Component {
   }
   render() {
     const { hasLoaded, openPriceDataSeries } = this.state;
-    if (!hasLoaded) return <Spinner />;
-    return <Line data={openPriceDataSeries} width="600" height="250"/>;
+    if (!hasLoaded) return <Loader />;
+    return (
+      <div>
+        <Line data={openPriceDataSeries} width="600" height="250"/>
+      </div>
+    );
   }
 }
