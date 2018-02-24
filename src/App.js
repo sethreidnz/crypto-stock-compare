@@ -5,13 +5,10 @@ import { PriceTable } from "./components/PriceTable";
 import { Spinner } from "./components/Spinner";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      ethereumData: null,
-      microsoftData: null,
-      hasLoaded: false
-    }
+  state = {
+    ethereumData: null,
+    microsoftData: null,
+    hasLoaded: false
   }
   async componentDidMount() {
     const ethereumData = await getEthereumDataFromApi();
