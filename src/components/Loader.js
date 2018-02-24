@@ -1,8 +1,8 @@
 import React from "react";
-import './Spinner.css';
+import './Loader.css';
 
-export const Spinner = () => (
-  <div class="spinner">
+export const Loader = () => (
+  <div class="loader">
     <div class="bounce1" />
     <div class="bounce2" />
     <div class="bounce3" />
