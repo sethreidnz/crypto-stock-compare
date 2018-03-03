@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs";
 import { getEthereumDataFromApi, getMicrosoftDataFromApi } from '../api/index';
-import { Loader } from "../components/loader";
+import { Loader } from "../components/Loader";
 import { transformIntoSeriesData } from "../utility";
 
 export class ComparisonGraph extends Component {

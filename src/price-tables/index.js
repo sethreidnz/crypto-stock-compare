@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { getEthereumDataFromApi, getMicrosoftDataFromApi } from '../api/index';
 import { PriceTable } from "./components/PriceTable";
-import { Loader } from "../components/loader";
+import { Loader } from "../components/Loader";
 
 export class PriceTables extends Component {
   state = {
