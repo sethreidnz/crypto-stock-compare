@@ -57,10 +57,6 @@ The intention of this repository and tutorial is to act as a guide to help you g
 
 ## Getting start
 
-Download the repository, and direct command prompt to the folder
-
-In the project directory run:
-
 ### `npm install`
 
 First you will need to install the npm packages. From the root directory of the project run:
