@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { getEthereumData, getMicrosoftData } from './api/index';
+
 import { PriceTable } from "./components/PriceTable";
 
 const ethereumData = getEthereumData();
@@ -23,5 +24,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;

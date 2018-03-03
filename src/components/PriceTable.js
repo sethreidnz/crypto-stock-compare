@@ -14,7 +14,7 @@ export const PriceTable = ({ priceData }) => (
     </thead>
     <tbody>
       {priceData.map(dayData => (
-        <PriceRow rowData={dayData} key={dayData.date} />
+        <PriceRow dayData={dayData} key={dayData.date} />
       ))}
     </tbody>
   </table>

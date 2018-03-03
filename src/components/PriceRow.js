@@ -1,17 +1,17 @@
 import React from "react";
 
-export const PriceRow = ({rowData}) => {
-  const arrowClass = `arrow-${rowData.change > 0 ? "up" : "down"}`;
-    return (
-      <tr>
-        <td>{rowData.date}</td>
-        <td>{rowData.open}</td>
-        <td>{rowData.low}</td>
-        <td>{rowData.high}</td>
-        <td>
-          <span className={arrowClass} />
-          {rowData.change}%
-        </td>
-      </tr>
-    );
+export const PriceRow = ({ dayData }) => {
+  const arrowClass = `arrow-${dayData.change > 0 ? "up" : "down"}`;
+  return (
+    <tr key={dayData.date}>
+      <td>{dayData.date}</td>
+      <td>{dayData.open}</td>
+      <td>{dayData.low}</td>
+      <td>{dayData.high}</td>
+      <td>
+        <span className={arrowClass} />
+        {dayData.change}%
+      </td>
+    </tr>
+  )
 };
