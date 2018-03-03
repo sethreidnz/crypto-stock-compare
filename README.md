@@ -55,7 +55,9 @@ The tutorial is split into multiple parts each covering a simple but important p
 
 The intention of this repository and tutorial is to act as a guide to help you get your head around the basics of the sorts of things you need to do in a react app
 
-## Running the project
+## Getting start
+
+### `npm install`
 
 First you will need to install the npm packages. From the root directory of the project run:
 
