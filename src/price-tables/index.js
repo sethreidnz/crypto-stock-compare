@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { getEthereumDataFromApi, getMicrosoftDataFromApi } from '../api/index';
-import { PriceTable } from "./components/PriceTable";
 import { Loader } from "../components/Loader";
+import { PriceTable } from "./components/PriceTable";
 
 export class PriceTables extends Component {
   state = {
@@ -20,6 +20,7 @@ export class PriceTables extends Component {
   }
   render() {
     const { ethereumData, microsoftData, hasLoaded } = this.state;
+    debugger;
     if (!hasLoaded) return <Loader />;
     return (
       <div>
