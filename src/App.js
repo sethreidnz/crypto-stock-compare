@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import { EthereumRow } from './components/EthereumRow';
-import { MicrosoftRow } from './components/MicrosoftRow';
+import { getEthereumData } from "./api";
+import { getMicrosoftData } from "./api";
+
+import { PriceTable } from "./components/PriceTable";
+
+const ethereumData = getEthereumData();
+const microsoftData = getMicrosoftData();
 
 class App extends Component {
   render() {
@@ -11,41 +16,14 @@ class App extends Component {
         <h1>Crypto Stock Compare</h1>
         <section className="value-table">
           <h2>Ethereum</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Open</th>
-                <th>Low</th>
-                <th>High</th>
-                <th>Change</th>
-              </tr>
-            </thead>
-            <tbody>
-              <EthereumRow />
-            </tbody>
-          </table>
+          <PriceTable priceData={ethereumData} />
         </section>
         <section className="value-table">
           <h2>Microsoft</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Open</th>
-                <th>Low</th>
-                <th>High</th>
-                <th>Change</th>
-              </tr>
-            </thead>
-            <tbody>
-              <MicrosoftRow />
-            </tbody>
-          </table>
+          <PriceTable priceData={microsoftData} />
         </section>
       </div>
     );
   }
 }
-
 export default App;
