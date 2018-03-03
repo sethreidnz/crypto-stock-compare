@@ -21,7 +21,7 @@ You need to get the code to start with so run the following:
 git clone https://github.com/sethreidnz/crypto-stock-compare
 ```
 
-**Step 2: Install the NPM packages needed**
+**Step 3: Install the NPM packages needed**
 
 From the directory where you ran the `git clone` command run the following two commands to install the npm packages the project needs:
 
@@ -30,7 +30,7 @@ cd crypto-stock-compare
 npm install 
 ```
 
-**Step 3: Checkout the `start` branch**
+**Step 4: Checkout the `start` branch**
 
 The master branch (the default branch) contains the final code, so run the following to change into the `start` branch to get started:
 
@@ -38,7 +38,7 @@ The master branch (the default branch) contains the final code, so run the follo
 git checkout start
 ```
 
-**Step 4: Go back to the tutorial**
+**Step 5: Go back to the tutorial**
 
 Now you are ready for [React Crypo Stock Compare the tutorial](https://sethreid.co.nz/react-crypto-indroduction-to-react/)!
 
