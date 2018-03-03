@@ -46,12 +46,12 @@ Now you are ready for [React Crypo Stock Compare the tutorial](https://sethreid.
 
 The tutorial is split into multiple parts each covering a simple but important part of building a web app with React. You can find the finished code for each step in a branch with the corresponding name in brackets.
 
-- Part 1: Introduction (start)
-- Part 2: Creating a basic component (creating-basic-component)
-- Part 3: Splitting components up (splitting-components)
-- Part 4: Using props to pass values and functions to sub-components (using-props)
-- Part 5: Using state to manage fetching data from an API (using-state-for-api-requests)
-- Part 6: Creating a new pages with React Router (react-router)
+- Part 1: [Introduction](https://sethreid.co.nz/react-crypto-indroduction-to-react)
+- Part 2: [Creating Components](https://sethreid.co.nz/react-crypto-pt-2-creating-components)
+- Part 3: [Splitting components](https://sethreid.co.nz/react-compare-pt-3-splitting-components)
+- Part 4: [Using Props](https://sethreid.co.nz/react-compare-pt-4-using-props)
+- Part 5: [Using state to manage fetching data from an API](https://sethreid.co.nz/react-crypto-pt-5-using-state-to-manage-fetching-data-from-an-api)
+- Part 6: [Creating Pages with React Router](https://sethreid.co.nz/react-crypto-pt-6-creating-pages-with-react-router)
 
 The intention of this repository and tutorial is to act as a guide to help you get your head around the basics of the sorts of things you need to do in a react app
 
