@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import { EthereumRow } from "./components/EthereumRow";
-import { MicrosoftRow } from "./components/MicrosoftRow";
+
+import { EthereumRow } from './components/EthereumRow';
+import { MicrosoftRow } from './components/MicrosoftRow';
 
 class App extends Component {
   render() {
