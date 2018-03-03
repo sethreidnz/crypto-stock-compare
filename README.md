@@ -1,8 +1,46 @@
 # Crypto Stock Compare
 
-This repository was created to help people learn the basic tasks that you need to perform when creating applications using [React](https://reactjs.org/). This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and you can find the most recent version of the user guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+This repository was created to go along with my [React Crypo Stock Compare tutorial](https://sethreid.co.nz/react-crypto-indroduction-to-react/) to help you learn the basics of [React JS](https://reactjs.org/).
 
-The app uses real world data from the [Alpha Vantage](https://www.alphavantage.co/) financial API to compare the movement of Ethereum's value and Microsoft's stock price. This is all just a bit of fun and an attempt to have a real world example that is Not-Another-Todo-App(TM).
+## Want to do the tutorial?
+
+If you want to get started following along from with the tutorial then follow these steps:
+
+**Step 1: Install NodeJS and Git**
+
+If you don't already have them installed then you can find them here:
+
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [Note](https://nodejs.org/en/download/)
+
+**Step 2: Clone the repo**
+
+You need to get the code to start with so run the following:
+
+```bash
+git clone https://github.com/sethreidnz/crypto-stock-compare
+```
+
+**Step 3: Install the NPM packages needed**
+
+From the directory where you ran the `git clone` command run the following two commands to install the npm packages the project needs:
+
+```bash
+cd crypto-stock-compare
+npm install 
+```
+
+**Step 4: Checkout the `start` branch**
+
+The master branch (the default branch) contains the final code, so run the following to change into the `start` branch to get started:
+
+```bash
+git checkout start
+```
+
+**Step 5: Go back to the tutorial**
+
+Now you are ready for [React Crypo Stock Compare the tutorial](https://sethreid.co.nz/react-crypto-indroduction-to-react/)!
 
 ## Overview
 
@@ -17,7 +55,15 @@ The tutorial is split into multiple parts each covering a simple but important p
 
 The intention of this repository and tutorial is to act as a guide to help you get your head around the basics of the sorts of things you need to do in a react app
 
-## Running the project
+## Getting start
+
+### `npm install`
+
+First you will need to install the npm packages. From the root directory of the project run:
+
+```bash
+npm install
+```
 
 In the project directory, you can run:
 
